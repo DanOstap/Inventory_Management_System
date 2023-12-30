@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Inventory_Management_System.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231227222156_Init")]
-    partial class Init
+    [Migration("20231229142243_MigrationSecond")]
+    partial class MigrationSecond
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

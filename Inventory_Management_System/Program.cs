@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<Contex>(options => {
+builder.Services.AddDbContext<Context>(options => {
     Console.WriteLine("Connection...");
     try
     {

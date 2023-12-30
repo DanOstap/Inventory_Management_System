@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Inventory_Management_System.Migrations
 {
-    [DbContext(typeof(Contex))]
+    [DbContext(typeof(Context))]
     partial class ContexModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -71,6 +71,32 @@ namespace Inventory_Management_System.Migrations
                     b.HasKey("Id_Product");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Inventory_Management_System.Models.User", b =>
+                {
+                    b.Property<string>("User_Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Position")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("User_Name");
+
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }
