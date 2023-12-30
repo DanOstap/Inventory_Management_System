@@ -38,5 +38,6 @@ namespace Inventory_Management_System.Controllers
             }
             throw new Exception("Sorry, you haven't rights");
         }
+        [HttpDelete]
     }
 }
