@@ -7,7 +7,7 @@ namespace Inventory_Management_System.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id_Inventory { get; set; }
+        public int Id_Inventory { get; }
         [Required]
         public string Name_Product { get; set; }
         [Required]

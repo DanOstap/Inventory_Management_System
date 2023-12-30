@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Inventory_Management_System.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231227222156_Init")]
-    partial class Init
+    [Migration("20231229144855_Second")]
+    partial class Second
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,32 @@ namespace Inventory_Management_System.Migrations
                     b.HasKey("Id_Product");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Inventory_Management_System.Models.User", b =>
+                {
+                    b.Property<string>("User_Name")
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("User_Position")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("User_Name");
+
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }
