@@ -21,13 +21,13 @@ namespace Inventory_Management_System.Controllers
             _context = contex;
         }
         [HttpPost]
-        public async Task<ActionResult> Login([FromBody] LoginUser _user)
+        public async Task<ActionResult> Login([FromBody] LoginUser user_model)
         {
-            var user = await _context.User.FirstOrDefaultAsync(a => a.User_Name == _user.Name);
+            var user = await _context.User.FirstOrDefaultAsync(a => a.User_Name == user_model.Name);
 
             if (user != null)
             {
-                if (user.User_Password == _user.Password)
+                if (user.User_Password == user_model.Password)
                 {
                     var userPosition = user.User_Position;
                     

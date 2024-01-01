@@ -31,8 +31,8 @@ namespace Inventory_Management_System.Controllers
             }
         }
         [HttpPost("/Add")]
-        public async Task<IActionResult> Post([FromBody] Products _model) {
-            _context.Add(_model);
+        public async Task<IActionResult> Post([FromBody] Products products) {
+            _context.Add(products);
             _context.SaveChangesAsync();
             return Ok("Operation Confirm");
         }
