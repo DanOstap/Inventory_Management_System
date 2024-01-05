@@ -48,5 +48,19 @@ namespace Inventory_Management_System.Controllers
             throw new Exception("No users with this Id");
 
         }
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> Update(int id, [FromBody] PathProduct _model)
+        {
+            var itemToUpdate = await _context.Products.FindAsync(id);
+            if (itemToUpdate == null)
+            {
+                return NotFound();
+            }
+            itemToUpdate.Price_Product = _model.Price_Product;
+            itemToUpdate.Manufacture_Product = _model.Manufacture_Product;
+            _context.Update(itemToUpdate);
+            _context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }
